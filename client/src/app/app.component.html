@@ -1,0 +1,80 @@
+<br><br>
+<h1 class="heading">Employee Manager</h1>
+<div class="left">
+  <form [formGroup]="empForm">
+    <div class="form-group">
+      <label class="a">Enter the Employee name</label> <br>
+      <input type="text" class="form" formControlName="name" placeholder="employee name" [(ngModel)]="emp_name"
+        required>
+    </div>
+    <div class="display">
+      <b>{{svgmsg}}</b>
+    </div>
+    <br>
+    <div class="form-group">
+      <label class="a">Enter the Employee email</label> <br>
+      <input type="email" class="form" formControlName="email" placeholder="employee email" [(ngModel)]="emp_email"
+        required><br><br>
+    </div>
+  </form>
+  <div class="form-group">
+    <label class="a">Choose a Employee status</label> <br>
+    <input type="radio" value="Active" [(ngModel)]="emp_status">
+    <label for="active">Active</label>
+    <input type="radio" value="In-active" [(ngModel)]="emp_status">
+    <label for="inactive">In-Active</label>
+    <br><br>
+  </div>
+
+  <button mat-raised-button color="primary" *ngIf="btnSave" (click)="saveEmployee()"
+    [disabled]="emp_name === '' || emp_email === '' " class="tooltip"><span class="tooltiptext">SAVE</span>
+    <mat-icon>save</mat-icon>
+  </button>
+  &nbsp;&nbsp;&nbsp;
+  <button mat-raised-button color="primary" *ngIf="btnUpdate" (click)="updateEmployee()"
+    class="tooltip">Update</button>&nbsp;&nbsp;
+  <button mat-raised-button color="primary" (click)="refreshForm()" class="tooltip"><span
+      class="tooltiptext">refresh</span>
+    <mat-icon>refresh</mat-icon>
+  </button>
+  <br><br>
+</div>
+<br>
+<!-- <div class="display">
+  <b>{{svgmsg}}</b>
+</div> -->
+<div class="right">
+  <div style=" width: 76%;">
+    <table class="headTable">
+      <thead>
+        <tr style=" background-color: #1EADF4;">
+          <th style="width: 10%;">S.NO</th>
+          <th style="width: 28%;">EMPLOYEE NAME</th>
+          <th style="width: 25%;">Email</th>
+          <th style="width: 20%;">STATUS</th>
+          <!--style="float: right;" -->
+          <th>ACTION</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="scl">
+    <table class="bodyTable">
+      <tbody>
+        <tr *ngFor="let emp of list;let i = index">
+          <td style="width: 10%;"><b>{{i+1}}</b></td>
+          <td style="width: 28%;">{{emp.name}}</td>
+          <td style="width: 25%;">{{emp.email}}</td>
+          <td style="width: 20%;">{{emp.status}}</td>
+          <td>
+            <!-- <button mat-raised-button color="primary"  class="tooltip"><span class="tooltiptext">Edit</span></button>&nbsp; -->
+            <mat-icon (click)="editEmployee(emp)" style="border-radius: 5px; background-color: #1EADF4;">edit</mat-icon> &nbsp;
+            <!-- <button mat-raised-button color="primary" class="tooltip"><span class="tooltiptext">Delete</span></button> -->
+            <mat-icon (click)="deleteEmployee(emp._id)" style="border-radius: 5px; background-color: #1EADF4;">clear</mat-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -1,0 +1,19 @@
+this.ename = emp.name,
+      this.eemail = emp.email,
+      this.estatus = emp.status;
+
+
+
+       edit(_id:string){
+    this.api.post(_id,
+      {
+        name: this.ename,
+        email: this.eemail,
+        status: this.estatus
+      }).then((x) => {
+        console.log('Item Saved', x);
+        this.loadData();
+      }).catch((x) => {
+        console.error('Error is', x);
+      });
+  }
