@@ -3,7 +3,7 @@
     font-style: italic;
     font-weight: bold;
     font-size: 40px;
-    color: #1EADF4;
+    color: #000000;
 }
 .left{
     /* border: 1px solid  #1EADF4; */
@@ -16,13 +16,12 @@
     background-color: #1EADF4;
     border-radius: 10px;
 }
-
 .right{
     /* border: 1px solid red; */
     margin-top: -28%;
     margin-left: 38%;
     padding-top: -22px;
-    width: 80%;
+    width: 690px;
     
 } 
 .main{
@@ -40,52 +39,50 @@
     border: 1px solid black ;
     padding: 10px;
 }
-.headTable{
-    width: 100%;
+.headTable th{
+    width: 130px;
+    border:1px solid white;
+    margin: 0px;  
 }
-.emp{
-  padding-left:-70%;
-}
-.bodyTable{
-  width: 76%;
+.bodyTable td {
+  width: 130px;
   margin-top: none;
+  word-wrap: break-word;
 }
 .bodyTable,td{
   /* padding-left: 5%; */
   text-align: center;
+  margin: 0px;
+  background-color: rgb(239, 239, 253);
+  border-bottom: white 1px solid;
 }
 .scl{
+  width: 690px;
   overflow-y:auto;
   height: 400px;
 }
-table,th{
-    border: 2px solid black;
-    border-radius: 5px;
+table th{
+    border: 1px solid white;
     border-collapse: collapse;
   }
-  tr{
-    border: 1px solid black;
+tr{
+    border: 1px solid white;
   }
-
-
-  input.ng-invalid{
+input.ng-invalid{
       border: 3px solid red;
   }
-  input.ng-valid{
+input.ng-valid{
     border: 3px solid green;
 }
-
 .error{
     color: red;
 }
-
 .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 1px solid black;
   }
-  
-  .tooltip .tooltiptext {
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 60px;
     background-color: black;
@@ -99,8 +96,7 @@ table,th{
     left: 50%;
     margin-left: -60px;
   }
-  
-  .tooltip .tooltiptext::after {
+.tooltip .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -110,16 +106,28 @@ table,th{
     border-style: solid;
     border-color: black transparent transparent transparent;
   }
-  
-  .tooltip:hover .tooltiptext {
+.tooltip:hover .tooltiptext {
     visibility: visible;
   }
-
 .scl button{
   width: 1px;
 }
 .display{
-  color:rgb(165, 23, 23);
+  color:rgba(207, 8, 8, 0.918);
   width: 70%;
   margin-left: 5%;
 }
+.headTable{
+  width: 680px;
+  border:1px white solid;
+  margin: 0px;
+}
+
+/* #style  {
+  background-color: red;
+}
+
+#style::before {     
+  background-color:yellow; 
+  
+} */
